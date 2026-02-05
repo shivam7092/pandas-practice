@@ -26,3 +26,10 @@ high_salary = df[df['salary'] > 70000]
 print("Employees with salary > 70000:")
 print(high_salary)
 print()
+
+#filter: IT department only 
+
+it_dept = df[df['department']=='IT']
+print("Employees working in IT department:")
+print(it_dept)
+print()
