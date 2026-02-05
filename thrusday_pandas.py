@@ -33,3 +33,17 @@ it_dept = df[df['department']=='IT']
 print("Employees working in IT department:")
 print(it_dept)
 print()
+
+#multiple conditions (AND) - use &
+
+it_and_high = df[(df['department'] == 'IT') & (df['salary'] > 70000)]
+print("Employees working in IT and have salary more then 70000")
+print(it_and_high)
+print()
+
+#Multiple conditions (OR) - use |
+
+young_or_rich = df[(df['age'] <= 30) | (df['salary'] > 70000)]
+print("Employees who are younger then 30 OR earning mre then 70k")
+print(young_or_rich)
+print()
