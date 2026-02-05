@@ -14,4 +14,15 @@ print("Original DataFrame:")
 print(df)
 print("\n" +"="*50 + "\n")
 
+# ================================
+#  1.filtering the data (like SQL Where)
+# ================================
 
+
+print("===FILTERING===\n")
+# filter salary > 70000
+
+high_salary = df[df['salary'] > 70000]
+print("Employees with salary > 70000:")
+print(high_salary)
+print()
