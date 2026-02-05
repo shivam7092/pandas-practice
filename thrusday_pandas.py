@@ -47,3 +47,20 @@ young_or_rich = df[(df['age'] <= 30) | (df['salary'] > 70000)]
 print("Employees who are younger then 30 OR earning mre then 70k")
 print(young_or_rich)
 print()
+
+# ==========================================
+# 2. SELECTING COLUMNS (like SQL SELECT)
+# ==========================================
+
+print("=== SELECTING COLUMNS ===\n")
+
+#select one column
+names = df['name']
+print("just names:")
+print(names)
+
+#selecting multiple columns
+name_Salary = df[['name','salary']]
+print("name and salary")
+print(name_Salary)
+print()
