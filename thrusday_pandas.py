@@ -77,3 +77,10 @@ by_age = df.sort_values('age')
 print("Sorted by age (low to high): ")
 print(by_age)
 print()
+
+# sorting descending
+
+by_salary = df.sort_values('salary', ascending=False)
+print("Salary by salary(high to low) : ")
+print(by_salary)
+print()
