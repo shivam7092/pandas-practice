@@ -232,3 +232,47 @@ print("EXERCISE 5: High-value electronics")
 
 high_value_electronics = product_df[(product_df['category'] =='Electronics') & (product_df['price']>100) ]
 print(high_value_electronics)
+
+#Save as CSV
+print("\n\n=== CSV FILES ===\n")
+
+product_df.to_csv('products.csv', index = False) #csv file already saved
+
+#Read from CSV
+
+df_from_csv = pd.read_csv('products.csv')
+print("\n Read from CSV:")
+print(df_from_csv.head())
+print()
+
+# ==========================================
+# EXERCISE 6: Real data analysis
+# ==========================================
+
+# Create sales data
+sales_data = {
+    'date': ['2024-02-01', '2024-02-01', '2024-02-02', '2024-02-02', '2024-02-03'],
+    'product': ['Laptop', 'Mouse', 'Laptop', 'Keyboard', 'Monitor'],
+    'quantity': [2, 5, 1, 3, 1],
+    'price': [1000, 25, 1000, 75, 400]
+}
+
+#creating sales data frame
+
+sales_df = pd.DataFrame(sales_data)
+print(sales_df)
+print()
+
+print("Calculation the total revenue (quantity * price)")
+
+sales_df['revenue'] = sales_df['quantity'] * sales_df['price']
+print(sales_df[['product','revenue']])
+print()
+
+# TODO: Find total revenue by product
+
+revenue_by_product = sales_df.groupby('product')['revenue'].sum()
+print(revenue_by_product)
+print()
+
+revenue_by_product.to_csv('sales_summary.csv', index = False)
