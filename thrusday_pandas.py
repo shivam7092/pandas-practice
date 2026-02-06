@@ -64,3 +64,16 @@ name_Salary = df[['name','salary']]
 print("name and salary")
 print(name_Salary)
 print()
+
+
+# ==========================================
+# 3. SORTING (like SQL ORDER BY)
+# ==========================================
+
+print("=== SORTING ===\n")
+
+# Sorting ascending 
+by_age = df.sort_values('age')
+print("Sorted by age (low to high): ")
+print(by_age)
+print()
