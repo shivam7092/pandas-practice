@@ -84,3 +84,30 @@ by_salary = df.sort_values('salary', ascending=False)
 print("Salary by salary(high to low) : ")
 print(by_salary)
 print()
+
+# Sort by name alphabetically
+
+name_sort = df.sort_values('name')
+print(name_sort)
+print()
+
+
+# ==========================================
+# 4. ADDING COLUMNS (NEW - Learn this now)
+# ==========================================
+
+print("\n ===ADDING COLUMNS ===\n")
+
+#simple calculation
+
+df['bonus'] = df['salary'] * 0.10
+print("with bonus column: ")
+print(df[['name', 'salary', 'bonus']])
+print()
+
+# conditional column
+
+df['senior'] = df['age'] >= 30
+print("with senior flag :")
+print(df[['name','salary','bonus','age','senior']])
+print()
