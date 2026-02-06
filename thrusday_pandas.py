@@ -111,3 +111,10 @@ df['senior'] = df['age'] >= 30
 print("with senior flag :")
 print(df[['name','salary','bonus','age','senior']])
 print()
+
+#adding high earner column
+
+df['high_earner'] = df['salary'] > 70000
+print(" with Hiighest earner :")
+print(df[['name','salary','high_earner']])
+print()
