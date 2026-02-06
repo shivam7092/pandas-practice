@@ -144,3 +144,91 @@ max_by_dept = df.groupby('department').max()
 print("max salary by department : ")
 print(max_by_dept)
 print()
+
+
+#===============================
+#=========Excercise ============
+#===============================
+
+
+print("\n\n" + "="*60)
+print("=== EXERCISES - MUST COMPLETE ===")
+print("="*60 + "\n")
+
+# Sample product data
+products = {
+    'product': ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headphones', 'Webcam'],
+    'category': ['Electronics', 'Accessories', 'Accessories', 'Electronics', 'Accessories', 'Electronics'],
+    'price': [1000, 25, 75, 400, 150, 80],
+    'stock': [15, 50, 30, 12, 25, 35],
+    'rating': [4.5, 4.0, 4.2, 4.7, 3.8, 4.1]
+}
+
+product_df = pd.DataFrame(products)
+print("Product Data :")
+print(product_df)
+print()
+
+
+# ==========================================
+# EXERCISE 1: Filter expensive products
+# ==========================================
+
+# TODO: Filter products where price > 100
+print("exercise 1: products with price > 100")
+
+expensive = product_df[product_df['price'] > 100]
+print("Below are the Expensive product :")
+print(expensive)
+print()
+
+# ==========================================
+# EXERCISE 2: Sort by rating
+# ==========================================
+
+# TODO: Sort by rating descending
+print("Exercise 2: products sorted by the rating (best first)")
+
+best_rated = product_df[product_df['rating'] > 4]
+print("Below are the best rated products : ")
+print(best_rated)
+print()
+
+# ==========================================
+# EXERCISE 3: Add total_value column
+# ==========================================
+
+# TODO: Add column 'total_value' = price * stock
+
+print("Excercise 3 : Calculate the inventory Value (price * stock)")
+
+product_df['total_value'] = product_df['price'] * product_df['stock']
+print("Total inventory value of the product :")
+print(product_df[['product','price','stock','total_value']])
+print()
+
+# ==========================================
+# EXERCISE 4: Group by category
+# ==========================================
+
+# TODO: Calculate average price per category
+
+print("Exercise 4: Average price by category")
+
+avg_price_by_category = product_df.groupby('category')['price'].mean()
+print(avg_price_by_category)
+print()
+
+# ==========================================
+# EXERCISE 5: Multiple operations
+# ==========================================
+
+# TODO: 
+# 1. Filter: category == 'Electronics' AND price > 100
+# 2. Sort by price descending
+# 3. Select only: product, price, stock
+
+print("EXERCISE 5: High-value electronics")
+
+high_value_electronics = product_df[(product_df['category'] =='Electronics') & (product_df['price']>100) ]
+print(high_value_electronics)
