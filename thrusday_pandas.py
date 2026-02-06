@@ -118,3 +118,29 @@ df['high_earner'] = df['salary'] > 70000
 print(" with Hiighest earner :")
 print(df[['name','salary','high_earner']])
 print()
+
+# ==========================================
+# 5. GROUPING (NEW - Most important!)
+# ==========================================
+
+print("\n ==== GROUPING ==== \n")
+
+# Group by and calculate mean
+avg_by_dept  = df.groupby('department')['salary'].mean()
+print("Average salary by department: ")
+print(avg_by_dept)
+print()
+
+# Count by group 
+
+count_by_dept = df.groupby('department').size()
+print("count by department : ")
+print(count_by_dept)
+print()
+
+# calculate max salary by department
+
+max_by_dept = df.groupby('department').max()
+print("max salary by department : ")
+print(max_by_dept)
+print()
