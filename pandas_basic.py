@@ -90,3 +90,27 @@ print(" Total Salary per Department: ")
 total_by_dept = df.groupby('department')['salary'].sum()
 print(total_by_dept)
 print()
+
+#practice 2
+print("Try: Find max salary per department")
+max_by_dept = df.groupby('department')['salary'].max()
+print(max_by_dept)
+print()
+
+# ==========================================
+# PRACTICE: Combine everything
+# ==========================================
+
+print("="*50)
+print(">>> PRACTICE: Combining concepts")
+print("="*50)
+print()
+
+# Example: Filter IT dept, sort by salary
+
+it_sorted = df[df['department'] == 'IT'].sort_values('salary', ascending = False)
+print("IT department sorted by salary: ")
+print(it_sorted)
+print()
+
+
