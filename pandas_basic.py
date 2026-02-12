@@ -63,3 +63,30 @@ age_30_plus = df[df['age'] >= 30]
 print(age_30_plus)
 print()
 
+# ==========================================
+# NEW: SORTING (like SQL ORDER BY)
+# ==========================================
+
+print("="*50)
+print(">>> NEW: SORTING")
+print("="*50)
+print()
+
+# Group and calculate average
+
+print("Average salary by department: ")
+avg_by_dept = df.groupby('department')['salary'].mean()
+print(avg_by_dept)
+print()
+
+# Group and count
+print("count people per department: ")
+count_by_dept = df.groupby('department').size()
+print(count_by_dept)
+print()
+
+# Group and SUM
+print(" Total Salary per Department: ")
+total_by_dept = df.groupby('department')['salary'].sum()
+print(total_by_dept)
+print()
