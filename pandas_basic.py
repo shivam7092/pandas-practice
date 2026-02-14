@@ -114,3 +114,6 @@ print(it_sorted)
 print()
 
 
+print("\n\n=== EXERCISES ===\n")
+
+
